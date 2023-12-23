@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+
+{{ content | safe }}
+{#<pre style="font-size: 12px;letter-spacing:normal;">
+{{ collections | console }}
+</pre>#}
+
+{% set namedTags = collections | keys | a_slice(2) %}
+
+<div>
+	<strong>Tags:</strong>
+	{% for namedTag in namedTags %}
+		<a href="/{{namedTag}}">{{namedTag}}</a>
+	{% endfor %}
+</div>
+
+<ul class="noul">
+{% for post in collections[ tag ] %}
+	<li>
+	<a class="post-list-item" href="{{post.url}}">
+		<h2>{{post.data.title}}</h2>
+		{% set date = post.data.date | getDate %}
+		<strong>{{date.dayName}} {{date.date}}{{date.dateSuffix}} {{date.monthName}} {{date.year}}</strong>
+		<div>{{post.data.short}}</div>
+		{#{date | console}#}
+		{#
+		<pre>
+			{{post | console}}
+		</pre>
+		#}
+	</a>
+	</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+{% if title == undefined %}
+  {% set title = 'Posts tagged: ' + page.url.slice(1,-1) %}
+{% endif %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} | Test</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #ffff88;
+  font-size: 1.25rem;
+}
+body,a {
+  color: #714a00;
+}
+.noul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.post-list-item {
+  text-decoration: none;
+  display: inline-block;
+  margin: .25rem 0;
+  padding: .5rem;
+}
+.post-list-item h2 {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+.post-list-item:hover {
+  background: #ffed60;
+}
+img {
+  max-width: 100%;
+}
+</style>
+</head><body>
+
+<div>
+  <a href="/">Blog</a>
+  <a href="/about">About</a>
+</div>
+
+<h1>{{ title }}</h1>
+{{ content | safe }}
+
+</body></html>

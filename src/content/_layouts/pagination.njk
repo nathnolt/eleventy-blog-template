@@ -1,0 +1,17 @@
+---
+layout: bloglist.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+   - all
+   - post
+permalink: /{{ tag }}/
+---
+
+{#
+<pre style="font-size: 12px;letter-spacing:normal;">
+{{ collections | console }}
+</pre>
+#}

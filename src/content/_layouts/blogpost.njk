@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+
+<div>
+{% set date = date | getDate %}
+<strong>{{date.dayName}} {{date.date}}{{date.dateSuffix}} {{date.monthName}} {{date.year}}</strong>
+</div>
+{#{page | console}#}
+
+{{content | safe}}
