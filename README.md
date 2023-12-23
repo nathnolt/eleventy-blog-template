@@ -4,7 +4,7 @@ npm install
 
 
 # Developing
-npx @11ty/eleventy --serve
+`npx @11ty/eleventy --serve`
 
 Then navigate to http://localhost:8080/
 
@@ -12,7 +12,7 @@ Then navigate to http://localhost:8080/
 # Building
 
 1. run
-npx @11ty/eleventy
+`npx @11ty/eleventy`
 
 2. see dist folder for built items
 
