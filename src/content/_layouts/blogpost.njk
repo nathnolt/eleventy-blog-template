@@ -3,8 +3,16 @@ layout: base.njk
 ---
 
 <div>
-{% set date = date | getDate %}
-<strong>{{date.dayName}} {{date.date}}{{date.dateSuffix}} {{date.monthName}} {{date.year}}</strong>
+	{% set date = date | getDate %}
+	<strong>{{date.dayName}} {{date.date}}{{date.dateSuffix}} {{date.monthName}} {{date.year}}</strong>
+</div>
+<br>
+<div>
+	{% set namedTags = tags.slice(1) %}
+	<strong>Tags:</strong>
+	{% for tag in namedTags %}
+		<a href="/{{tag}}">{{tag}}</a>
+	{% endfor %}
 </div>
 {#{page | console}#}
 
